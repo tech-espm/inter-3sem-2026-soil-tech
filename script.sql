@@ -6,7 +6,7 @@ USE soiltech;
 
 -- Um registro é inserido a cada 10 minutos, quer tenham ocorrido mudanças ou não.
 CREATE TABLE soil (
-  id bigint NOT NULL AUTO_INCREMENT,
+  id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
   data datetime NOT NULL,
   id_sensor tinyint NOT NULL,
   delta int NOT NULL, -- segundos
