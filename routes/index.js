@@ -7,14 +7,23 @@ const sql = require("../data/sql");
 const url_api = process.env.url_api;
 
 router.get("/", wrap(async (req, res) => {
-	const response = await axios.get(url_api + "?sensor=passage&data_inicial=2026-04-26&data_final=2026-04-28");
-	const dados = response.data;
-	console.log(dados);
 	
-		await sql.connect(async sql => {
-		const lista = await sql.query("select 1");
+	await sql.connect(async sql => {
+		let lista = await sql.query("select max(id) id from soil");
+                           
+		let id_inferior = 61628;
+		if (lista[0].id) {
+			id_inferior = lista[0].id;
+		}
 
-		console.log(lista);
+		const response = await axios.get(url_api + "?sensor=soil&id_inferior=" + id_inferior);
+		const dadosNovos = response.data;
+
+		for (let i = 0; i < dadosNovos.length; i++) {
+			const dadoNovo = dadosNovos[i];
+
+			await sql.query("insert into soil (id, data, id_sensor, delta, condutividade, umidade, temperatura) values (?, ?, ?, ?, ?, ?, ?)", [dadoNovo.id, dadoNovo.data, dadoNovo.id_sensor, dadoNovo.delta, dadoNovo.condutividade, dadoNovo.umidade, dadoNovo.temperatura]);
+		}
 	});
 
 	let nomeDoUsuarioQueVeioDoBanco = "Rafael";
@@ -70,7 +79,7 @@ router.get("/produtos", wrap(async (req, res) => {
 		valor: 100
 	};
 
-	let produtosVindosDoBanco = [ produtoA, produtoB, produtoC ];
+	let produtosVindosDoBanco = [produtoA, produtoB, produtoC];
 
 	let opcoes = {
 		titulo: "Listagem de Produtos",

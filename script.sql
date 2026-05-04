@@ -29,3 +29,4 @@ and id_sensor = 2
 group by dia, hora
 order by dia, hora
 ;
+
