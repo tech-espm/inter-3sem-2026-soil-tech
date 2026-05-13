@@ -30,3 +30,4 @@ group by dia, hora
 order by dia, hora
 ;
 
+select * from soil;

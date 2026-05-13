@@ -11,7 +11,7 @@ router.get("/", wrap(async (req, res) => {
 	await sql.connect(async sql => {
 		let lista = await sql.query("select max(id) id from soil");
                            
-		let id_inferior = 61628;
+		let id_inferior = 1;
 		if (lista[0].id) {
 			id_inferior = lista[0].id;
 		}
@@ -36,7 +36,28 @@ router.get("/", wrap(async (req, res) => {
 	res.render("index/index", opcoes);
 }));
 
+router.get("/presencaTotalPorDia", wrap(async (req, res) => {
+	const data_inicial = req.query["data_inicial"];
+	const data_final = req.query["data_final"];
+	let dados;
+
+	await sql.connect(async sql => {
+
+		dados = await sql.query(`
+			select id_sensor, date(data) dia, sum(delta) presenca_total from soil
+			where data between ? and ? and ocupado = 0
+			group by id_sensor, dia
+			order by id_sensor, dia    #### MUDAR PARA SOIL
+		`, [data_inicial, data_final]);
+
+	});
+
+	res.json(dados);
+}));
+
 router.get("/teste", wrap(async (req, res) => {
+
+	let teste = await sql.query("select * from soil")
 	let opcoes = {
 		layout: "casca-teste"
 	};
