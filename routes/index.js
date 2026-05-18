@@ -11,7 +11,7 @@ router.get("/", wrap(async (req, res) => {
 	await sql.connect(async sql => {
 		let lista = await sql.query("select max(id) id from soil");
                            
-		let id_inferior = 1;
+		let id_inferior = 61628;
 		if (lista[0].id) {
 			id_inferior = lista[0].id;
 		}
@@ -53,6 +53,18 @@ router.get("/presencaTotalPorDia", wrap(async (req, res) => {
 	});
 
 	res.json(dados);
+}));
+
+router.get("/sobre", wrap(async (req, res) => {
+	res.render("index/sobre");
+}));
+
+router.get("/contato", wrap(async (req, res) => {
+	res.render("index/contato");
+}));
+
+router.get("/tecnologia", wrap(async (req, res) => {
+	res.render("index/tecnologia");
 }));
 
 router.get("/teste", wrap(async (req, res) => {

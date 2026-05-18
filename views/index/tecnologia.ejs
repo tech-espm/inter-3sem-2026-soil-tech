@@ -1,0 +1,85 @@
+
+<header>
+    <strong>SoilTech</strong>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#dashboard">Dashboard</a></li>
+        <li><a href="/contato">Contato</a></li>
+    </ul>
+</header>
+
+<div class="container">
+
+    <h1>Tecnologia</h1>
+
+    <p>
+        O sistema SoilTech utiliza sensores inteligentes instalados no solo para monitoramento contínuo de umidade, temperatura e condutividade.
+    </p>
+
+    <p>
+        Esses sensores enviam dados em tempo real para um sistema central, onde são processados e exibidos em um dashboard interativo.
+    </p>
+
+    <p>
+        A tecnologia permite tomada de decisão agrícola mais precisa, reduzindo desperdício de água e aumentando produtividade.
+    </p>
+
+</div>
+
+<%- contentFor("espaco-head") %>
+
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    background: #f9fafb;
+    color: #111827;
+}
+
+/* NAVBAR */
+header {
+    background: #ffffff;
+    padding: 20px 40px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111827;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #16a34a;
+}
+
+/* CONTEÚDO */
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+    color: #16a34a;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+</style>

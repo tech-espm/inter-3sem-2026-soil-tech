@@ -1,0 +1,94 @@
+
+<!-- NAV -->
+<nav>
+    <div><strong>SoilTech</strong></div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/#dashboard">Dashboard</a>
+        <a href="/tecnologia">Tecnologia</a>
+        
+    </div>
+</nav>
+
+<!-- CONTEUDO -->
+<div class="container">
+    <h1>Contato</h1>
+
+    <div class="info">
+        <div>
+            <h3>Vendas</h3>
+            <p>Comercial SoilTech</p>
+
+            <h3>Suporte</h3>
+            <p>Ajuda técnica e sensores</p>
+
+            <h3>Parcerias</h3>
+            <p>Projetos agrícolas</p>
+        </div>
+
+        <div>
+            <h3>Email</h3>
+            <p>contato@soiltech.com</p>
+
+            <h3>Telefone</h3>
+            <p>(11) 99999-9999</p>
+
+            <h3>Localização</h3>
+            <p>São Paulo - SP</p>
+        </div>
+    </div>
+</div>
+
+<%- contentFor("espaco-head") %>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: white;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* CONTEUDO */
+.container {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.info div {
+    flex: 1;
+}
+
+h3 {
+    margin-top: 20px;
+}
+</style>

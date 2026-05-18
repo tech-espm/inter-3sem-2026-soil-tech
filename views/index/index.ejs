@@ -1,31 +1,658 @@
-﻿<h1>Eu sou a página index!</h1>
+﻿
+<!-- NAV -->
+<nav>
+    <div><strong>SoilTech</strong></div>
+    <div>
+        <a href="/sobre">Sobre Nós</a>
+        <a href="/tecnologia">Tecnologia</a>
+        <a href="/#dashboard">Dashboard</a>
+        <a href="/contato">Contato</a>
+    </div>
+</nav>
 
-<p>Oi, <%= usuario %>! 😅</p>
 
-<p>
-	<img src="/public/images/emoji.png" alt="Emoji 😊" />
-</p>
 
-<% for (let contador = 0; contador < quantidadeDeRepeticoes; contador++) { %>
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Monitoramento Inteligente do Solo</h1>
+        <p>Precisão, sustentabilidade e produtividade em tempo real</p>
+    </div>
 
-	<h2>😱</h2>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C300,150 1100,0 1440,80 L1440,120 L0,120 Z"></path>
+    </svg>
+</section>
 
-	<p>O que é isso?!?!</p>
+<section style="padding: 80px 40px; background:#ffffff;">
+    
+    <div style="max-width:1100px; margin:auto; display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
 
-<% } %>
+        <!-- TEXTO -->
+        <div style="flex:1; min-width:300px;">
+            <h2 style="font-size:28px; margin-bottom:20px;">
+                Monitoramento Inteligente para Agricultura de Precisão
+            </h2>
 
-<%- include("exemplo-include") %>
+            <p style="color:#4b5563; line-height:1.6; margin-bottom:15px;">
+                A SoilTech oferece uma solução moderna de monitoramento do solo, utilizando sensores inteligentes capazes de coletar dados em tempo real sobre umidade, temperatura e condutividade.
+            </p>
 
-<p>Tchau, <%= usuario %>!</p>
+            <p style="color:#4b5563; line-height:1.6; margin-bottom:15px;">
+                Essas informações permitem uma análise precisa das condições do solo, auxiliando produtores na tomada de decisões estratégicas para aumentar a produtividade e reduzir desperdícios.
+            </p>
+
+            <p style="color:#4b5563; line-height:1.6; margin-bottom:25px;">
+                Nossa tecnologia integra dados e visualização em um dashboard interativo, proporcionando controle total e eficiência no manejo agrícola.
+            </p>
+
+            <!-- BOTÃO -->
+            <a href="/sobre" target="_blank" style="
+                display:inline-block;
+                padding:12px 25px;
+                border:2px solid #16a34a;
+                border-radius:30px;
+                text-decoration:none;
+                color:#16a34a;
+                font-weight:500;
+                transition:0.3s;
+            "
+            onmouseover="this.style.background='#16a34a'; this.style.color='white';"
+            onmouseout="this.style.background='transparent'; this.style.color='#16a34a';"
+            >
+                Saiba mais sobre a SoilTech
+            </a>
+
+        </div>
+
+        <!-- IMAGEM -->
+        <div style="flex:1; min-width:300px;">
+            <img src="https://aueirrigacao.com/revistas/img/169-002.jpg" 
+                 style="width:100%; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
+        </div>
+
+    </div>
+
+</section>
+
+<section style="padding:80px 40px; background:#f9fafb;">
+
+    <div style="max-width:1100px; margin:auto; text-align:center;">
+
+        <h2 style="color:#16a34a; margin-bottom:10px;">
+            Nossos Projetos e Metas
+        </h2>
+
+        <p style="color:#6b7280; margin-bottom:50px;">
+            Soluções inteligentes para transformar a agricultura com tecnologia e sustentabilidade
+        </p>
+
+        <div style="
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap:30px;
+        ">
+
+            <!-- CARD -->
+            <div class="card">
+                <div style="font-size:40px;">📈</div>
+                <h3>Análise Econômica</h3>
+                <p style="font-size:14px;">
+                    O agronegócio impulsiona a economia e exige tecnologias para aumentar produtividade.
+                </p>
+            </div>
+
+            <div class="card">
+                <div style="font-size:40px;">🌍</div>
+                <h3>Impacto Social</h3>
+                <p style="font-size:14px;">
+                    Sustentabilidade e qualidade alimentar são cada vez mais exigidas pelos consumidores.
+                </p>
+            </div>
+
+            <div class="card">
+                <div style="font-size:40px;">💻</div>
+                <h3>Inovação Tecnológica</h3>
+                <p style="font-size:14px;">
+                    Sensores inteligentes integram dados do solo em tempo real.
+                </p>
+            </div>
+
+            <div class="card">
+                <div style="font-size:40px;">🌱</div>
+                <h3>Sustentabilidade</h3>
+                <p style="font-size:14px;">
+                    Redução do uso de água e fertilizantes, preservando o meio ambiente.
+                </p>
+            </div>
+
+            <div class="card">
+                <div style="font-size:40px;">👨‍🌾</div>
+                <h3>Clientes-Alvo</h3>
+                <p style="font-size:14px;">
+                    Produtores rurais, agricultura familiar e instituições de pesquisa.
+                </p>
+            </div>
+
+            <div class="card">
+                <div style="font-size:40px;">🧪</div>
+                <h3>Diferencial</h3>
+                <p style="font-size:14px;">
+                    Alta precisão para culturas sensíveis como o wasabi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div style="font-size:40px;">📊</div>
+                <h3>Justificativa</h3>
+                <p style="font-size:14px;">
+                    Decisões baseadas em dados aumentam produtividade e reduzem custos.
+                </p>
+            </div>
+
+            <div class="card">
+                <div style="font-size:40px;">♻️</div>
+                <h3>ODS</h3>
+                <p style="font-size:14px;">
+                    Alinhado com sustentabilidade, inovação e uso consciente de recursos.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+<section class="section dashboard" id="dashboard">
+
+    <h2>Monitoramento em Tempo Real</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Temperatura</h3>
+            <p id="temp">--</p>
+        </div>
+
+        <div class="card">
+            <h3>Umidade</h3>
+            <p id="umidade">--</p>
+        </div>
+
+        <div class="card">
+            <h3>Condutividade</h3>
+            <p id="cond">--</p>
+        </div>
+
+    </div>
+
+    <canvas id="grafico"></canvas>
+
+    <h3 style="margin-top:40px; color:#16a34a;">
+        Heatmap de Umidade (Dia × Hora)
+    </h3>
+
+    <div id="heatmap"></div>
+
+    <!-- LEGEND DO HEATMAP -->
+<div style="display:flex; gap:20px; margin-top:15px; align-items:center;">
+
+    <div style="display:flex; align-items:center; gap:8px; font-size:13px;">
+        <div style="width:14px; height:14px; background:#ef4444; border-radius:3px;"></div>
+        Baixa umidade (solo seco)
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; font-size:13px;">
+        <div style="width:14px; height:14px; background:#f59e0b; border-radius:3px;"></div>
+        Atenção (umidade intermediária)
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; font-size:13px;">
+        <div style="width:14px; height:14px; background:#16a34a; border-radius:3px;"></div>
+        Ideal (umidade adequada)
+    </div>
+
+</div>
+
+</section>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- LOGO / NOME -->
+        <div class="footer-contact">
+            <h3 style="color:white; margin-bottom:10px;">SoilTech</h3>
+            <p>Monitoramento inteligente do solo</p>
+        </div>
+
+        <!-- ENDEREÇO -->
+        <div class="footer-contact">
+            <h4 style="color:white; margin-bottom:10px;">Endereço</h4>
+            <p>São Paulo - SP</p>
+            <p>Brasil</p>
+        </div>
+
+        <!-- CONTATO -->
+        <div class="footer-contact">
+            <h4 style="color:white; margin-bottom:10px;">Contato</h4>
+            <p>Email: contato@soiltech.com</p>
+            <p>Telefone: (11) 99999-9999</p>
+        </div>
+
+        <!-- LINKS -->
+        <div class="footer-links">
+            <h4 style="color:white; margin-bottom:10px;">Links Úteis</h4>
+            <a href="/sobre">Sobre Nós</a>
+            <a href="/tecnologia">Tecnologia</a>
+            <a href="/#dashboard">Dashboard</a>
+            <a href="/contato">Contato</a>
+        </div>
+
+    </div>
+
+    <!-- LINHA DE BAIXO -->
+    <div style="text-align:center; margin-top:30px; color:#9ca3af;">
+        © 2026 SoilTech - Todos os direitos reservados
+    </div>
+</footer>
+
+<script>
+
+const ctx = document.getElementById("grafico");
+
+const grafico = new Chart(ctx, {
+    type: "line",
+    data: {
+        labels: [],
+        datasets: [
+            { label: "Temperatura", data: [], borderColor: "#ef4444" },
+            { label: "Umidade", data: [], borderColor: "#3b82f6" },
+            { label: "Condutividade", data: [], borderColor: "#16a34a" }
+        ]
+    }
+});
+
+async function atualizar() {
+
+    const res = await fetch("/dados");
+    const data = await res.json();
+
+    document.getElementById("temp").innerText = data.temperatura + " °C";
+    document.getElementById("umidade").innerText = data.umidade + " %";
+    document.getElementById("cond").innerText = data.condutividade + " μS/cm";
+
+    grafico.data.labels.push(data.hora);
+
+    grafico.data.datasets[0].data.push(data.temperatura);
+    grafico.data.datasets[1].data.push(data.umidade);
+    grafico.data.datasets[2].data.push(data.condutividade);
+
+    grafico.data.datasets.forEach(d => {
+        if (d.data.length > 10) d.data.shift();
+    });
+
+    grafico.update();
+}
+
+async function gerarHeatmap() {
+
+    const res = await fetch("/heatmap");
+    const dados = await res.json();
+
+    const container = document.getElementById("heatmap");
+    container.innerHTML = "";
+
+    const grid = document.createElement("div");
+    grid.className = "heatmap-grid";
+
+    grid.appendChild(document.createElement("div"));
+
+    for (let h = 0; h < 24; h++) {
+        const hora = document.createElement("div");
+        hora.className = "label";
+        hora.innerText = h + "h";
+        grid.appendChild(hora);
+    }
+
+    dados.forEach((linha, d) => {
+
+        const dia = document.createElement("div");
+        dia.className = "label label-day";
+        dia.innerText = "Dia " + (d + 1);
+        grid.appendChild(dia);
+
+        linha.forEach((umidade, h) => {
+
+            let cor =
+                umidade < 50 ? "#ef4444" :
+                umidade < 65 ? "#f59e0b" :
+                "#16a34a";
+
+            const cell = document.createElement("div");
+            cell.className = "heat-cell";
+            cell.style.background = cor;
+
+            grid.appendChild(cell);
+        });
+    });
+
+    container.appendChild(grid);
+}
+
+/* NAV muda ao rolar */
+
+
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+
+setInterval(atualizar, 600000);
+atualizar();
+gerarHeatmap();
+
+</script>
 
 <%- contentFor("espaco-head") %>
 
-<style type="text/css">
-	body {
-		color: blue;
-	}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #111827;
+}
+
+/* NAV (UNIFICADO E CORRIGIDO) */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: transparent;
+    border-bottom: none;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    outline: none;
+    appearance: none;
+
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+
+    position: relative;
+    cursor: pointer;
+}
+
+/* LOGO */
+nav div:first-child {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* NAV AO ROLAR */
+nav.scrolled {
+    background: #111827;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* LINHA ANIMADA */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero div {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.hero p {
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* DASHBOARD */
+.dashboard {
+    background: #f9fafb;
+    padding-bottom: 80px;
+}
+
+.dashboard h2 {
+    color: #16a34a;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    border-top: 4px solid #16a34a;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card:nth-child(1) { border-top-color: #ef4444; }
+.card:nth-child(2) { border-top-color: #3b82f6; }
+.card:nth-child(3) { border-top-color: #16a34a; }
+
+.card h3 {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.card p {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #111827;
+}
+
+/* GRAFICO */
+canvas {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* HEATMAP */
+#heatmap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+.heat-row {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: 3px;
+}
+
+.heat-cell {
+    height: 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.heat-cell:hover {
+    transform: scale(1.4);
+}
+
+/* FOOTER */
+.footer {
+    background: #111827;
+    color: #d1d5db;
+    padding: 40px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.hero svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+}
+
+.hero svg path {
+    fill: #ffffff; /* mesma cor da próxima seção */
+}
+
+/* CONTAINER GERAL */
+#heatmap {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+/* GRID COMPLETO (com labels) */
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: 80px repeat(24, 1fr);
+    gap: 4px;
+    align-items: center;
+}
+
+/* LABELS (dia/hora) */
+.label {
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+}
+
+/* LABEL DIA (lado esquerdo) */
+.label-day {
+    text-align: right;
+    padding-right: 10px;
+    font-weight: 500;
+}
+
+/* CÉLULAS */
+.heat-cell {
+    height: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.heat-cell:hover {
+    transform: scale(1.3);
+}
+
 </style>
-
-<%- contentFor("espaco-barra") %>
-
-<i>Estou na barra! 😊</i>
+</head>

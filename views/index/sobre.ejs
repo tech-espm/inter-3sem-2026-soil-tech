@@ -1,0 +1,155 @@
+
+<!-- NAV -->
+<nav>
+    <div><strong>SoilTech</strong></div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/tecnologia">Tecnologia</a>
+        <a href="/#dashboard">Dashboard</a>
+        <a href="/contato">Contato</a>
+    </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<div class="container">
+
+    <h1>Sobre Nós</h1>
+
+    <p>
+        A SoilTech é uma plataforma de monitoramento inteligente do solo desenvolvida para apoiar a agricultura moderna por meio da tecnologia e da análise de dados em tempo real. Nosso objetivo é fornecer informações precisas sobre condições do solo, como umidade, temperatura e condutividade, permitindo decisões mais eficientes no manejo agrícola.
+    </p>
+
+    <p>
+        Acreditamos que a tecnologia é um pilar fundamental para o futuro da produção de alimentos. Por isso, nossa solução busca aumentar a produtividade, reduzir o desperdício de recursos naturais e promover práticas agrícolas mais sustentáveis e responsáveis.
+    </p>
+
+    <p>
+        Através de sensores e sistemas integrados de coleta de dados, oferecemos uma visão contínua e confiável do ambiente do solo, ajudando produtores rurais, pesquisadores e instituições a alcançarem melhores resultados.
+    </p>
+
+    <p>
+        Nosso compromisso é unir inovação, sustentabilidade e eficiência para transformar a forma como o campo utiliza a tecnologia.
+    </p>
+
+    <!-- INTEGRANTES -->
+    <div class="team">
+        <h2>Integrantes do Projeto</h2>
+
+        <div class="members">
+
+            <div class="member">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQHKlEHtg4FiAQ/profile-displayphoto-crop_800_800/B4EZs9OvU2GkAM-/0/1766258833618?e=1777507200&v=beta&t=9NlAyDX2oT2j4K6x_VDlEXDnOMSEc0PGvbWCo1PknJE" alt="Kevin Lee">
+                <h3>Kevin Lee</h3>
+            </div>
+
+            <div class="member">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQH1v3T26XguTQ/profile-displayphoto-shrink_800_800/B4DZdh7Ds_HwAc-/0/1749694561459?e=1777507200&v=beta&t=RgXeO8jhd9jfJPCL4MPXv6IJjuQsItUhM7Zerf25PD0" alt="Ricardo Gul D'Ávila">
+                <h3>Ricardo Gul D'Ávila</h3>
+            </div>
+
+            <div class="member">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQH2eRGyILSEPw/profile-displayphoto-shrink_800_800/B4DZdg4z_yHkAc-/0/1749677195771?e=1777507200&v=beta&t=7uRUHf-X2tJ5ZnPGsxKQaEWt3f2Sznpzw5hrk4Xu7Jc" alt="Gustavo Knorre">
+                <h3>Gustavo Knorre</h3>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<%- contentFor("espaco-head") %>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    color: #111;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: white;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* TEXTO */
+h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* TIME */
+.team {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd;
+}
+
+.team h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* CARD DOS MEMBROS */
+.members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.member {
+    background: #f4f6f8;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.member:hover {
+    transform: scale(1.03);
+}
+
+.member img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.member h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+</style>
