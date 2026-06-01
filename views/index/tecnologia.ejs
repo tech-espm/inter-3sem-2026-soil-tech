@@ -1,13 +1,14 @@
 
-<header>
-    <strong>SoilTech</strong>
-
-    <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#dashboard">Dashboard</a></li>
-        <li><a href="/contato">Contato</a></li>
-    </ul>
-</header>
+<!-- NAV -->
+<nav>
+    <div><strong><a href="/">SoilTech</a></strong></div>
+    <div>
+        <a href="/sobre">Sobre Nós</a>
+        <a href="/tecnologia">Tecnologia</a>
+        <a href="/#dashboard">Dashboard</a>
+        <a href="/contato">Contato</a>
+    </div>
+</nav>
 
 <div class="container">
 
@@ -27,41 +28,24 @@
 
 </div>
 
+<script>
+
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+
+</script>
+
 <%- contentFor("espaco-head") %>
 
 <style>
 body {
-    font-family: "Segoe UI", sans-serif;
-    margin: 0;
-    background: #f9fafb;
-    color: #111827;
-}
-
-/* NAVBAR */
-header {
-    background: #ffffff;
-    padding: 20px 40px;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #111827;
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: #16a34a;
+    background: #000;
 }
 
 /* CONTEÚDO */

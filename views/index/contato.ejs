@@ -1,12 +1,12 @@
 
 <!-- NAV -->
 <nav>
-    <div><strong>SoilTech</strong></div>
+    <div><strong><a href="/">SoilTech</a></strong></div>
     <div>
-        <a href="/">Home</a>
-        <a href="/#dashboard">Dashboard</a>
+        <a href="/sobre">Sobre Nós</a>
         <a href="/tecnologia">Tecnologia</a>
-        
+        <a href="/#dashboard">Dashboard</a>
+        <a href="/contato">Contato</a>
     </div>
 </nav>
 
@@ -39,31 +39,25 @@
     </div>
 </div>
 
+<script>
+
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+
+</script>
+
 <%- contentFor("espaco-head") %>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", sans-serif;
-}
 
 body {
-    background: #f4f6f8;
-}
-
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: white;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
+    background: #000;
 }
 
 /* CONTEUDO */

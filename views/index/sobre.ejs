@@ -1,9 +1,9 @@
 
 <!-- NAV -->
 <nav>
-    <div><strong>SoilTech</strong></div>
+    <div><strong><a href="/">SoilTech</a></strong></div>
     <div>
-        <a href="/">Home</a>
+        <a href="/sobre">Sobre Nós</a>
         <a href="/tecnologia">Tecnologia</a>
         <a href="/#dashboard">Dashboard</a>
         <a href="/contato">Contato</a>
@@ -57,34 +57,25 @@
 
 </div>
 
+<script>
+
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+
+</script>
+
 <%- contentFor("espaco-head") %>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-}
 
 body {
-    background: #f4f6f8;
-    color: #111;
-}
-
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: white;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #111;
-    font-weight: 500;
+	background-color: #000;
 }
 
 /* CONTAINER */
@@ -94,19 +85,6 @@ nav a {
     padding: 30px;
     background: white;
     border-radius: 10px;
-}
-
-/* TEXTO */
-h1 {
-    font-size: 42px;
-    margin-bottom: 25px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.9;
-    margin-bottom: 20px;
-    text-align: justify;
 }
 
 /* TIME */
