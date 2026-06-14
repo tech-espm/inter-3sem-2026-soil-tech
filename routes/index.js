@@ -67,59 +67,74 @@ router.get("/tecnologia", wrap(async (req, res) => {
 	res.render("index/tecnologia");
 }));
 
-router.get("/teste", wrap(async (req, res) => {
+router.get("/dados", wrap(async (req, res) => {
+    let resultado;
 
-	let teste = await sql.query("select * from soil")
-	let opcoes = {
-		layout: "casca-teste"
-	};
+    await sql.connect(async sql => {
+        const rows = await sql.query(`
+            SELECT temperatura, umidade, condutividade,
+                   DATE_FORMAT(data, '%H:%i') AS hora
+            FROM soil
+            ORDER BY id DESC
+            LIMIT 1
+        `);
+        resultado = rows[0];
+    });
 
-	res.render("index/teste", opcoes);
+    res.json(resultado);
 }));
 
-router.get("/teste2", wrap(async (req, res) => {
-	let opcoes = {
-		layout: "casca-teste"
-	};
+router.get("/dados/historico", wrap(async (req, res) => {
+    let resultado;
+    const { data_inicial, data_final, hora_inicial, hora_final } = req.query;
 
-	res.render("index/teste2", opcoes);
+    await sql.connect(async sql => {
+        resultado = await sql.query(`
+            SELECT temperatura, umidade, condutividade,
+                   DATE_FORMAT(data, '%d/%m %H:%i') AS hora
+            FROM soil
+            WHERE id_sensor = 2
+              AND data BETWEEN ? AND ?
+              AND TIME(data) BETWEEN ? AND ?
+            ORDER BY id ASC
+            LIMIT 100
+        `, [data_inicial, data_final, hora_inicial, hora_final]);
+    });
+
+    res.json(resultado);
 }));
 
-router.get("/teste3", wrap(async (req, res) => {
-	let opcoes = {
-		layout: "casca-teste"
-	};
+router.get("/heatmap", wrap(async (req, res) => {
+    let resultado;
+    const { data_inicial, data_final, hora_inicial, hora_final } = req.query;
 
-	res.render("index/teste3", opcoes);
-}));
+    await sql.connect(async sql => {
+        resultado = await sql.query(`
+            SELECT
+                date_format(date(data), '%d/%m/%Y') AS dia,
+                EXTRACT(HOUR FROM data) AS hora,
+                AVG(umidade) AS umidade
+            FROM soil
+            WHERE id_sensor = 2
+              AND data BETWEEN ? AND ?
+              AND TIME(data) BETWEEN ? AND ?
+            GROUP BY dia, hora
+            ORDER BY dia, hora
+        `, [data_inicial, data_final, hora_inicial, hora_final]);
+    });
 
-router.get("/produtos", wrap(async (req, res) => {
-	let produtoA = {
-		id: 1,
-		nome: "Produto A",
-		valor: 25
-	};
+    const diasMap = {};
+    for (const row of resultado) {
+        if (!diasMap[row.dia]) diasMap[row.dia] = {};
+        diasMap[row.dia][row.hora] = parseFloat(row.umidade) || 0;
+    }
 
-	let produtoB = {
-		id: 2,
-		nome: "Produto B",
-		valor: 15
-	};
+    const dias = Object.keys(diasMap);
+    const matriz = dias.map(dia => {
+        return Array.from({ length: 24 }, (_, h) => diasMap[dia][h] || 0);
+    });
 
-	let produtoC = {
-		id: 3,
-		nome: "Produto C",
-		valor: 100
-	};
-
-	let produtosVindosDoBanco = [produtoA, produtoB, produtoC];
-
-	let opcoes = {
-		titulo: "Listagem de Produtos",
-		produtos: produtosVindosDoBanco
-	};
-
-	res.render("index/produtos", opcoes);
+    res.json(matriz);
 }));
 
 module.exports = router;
