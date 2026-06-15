@@ -1,4 +1,3 @@
-
 <!-- NAV -->
 <nav>
     <div><strong><a href="/">SoilTech</a></strong></div>
@@ -10,37 +9,71 @@
     </div>
 </nav>
 
-<!-- CONTEUDO -->
-<div class="container">
-    <h1>Contato</h1>
+<!-- CONTEÚDO -->
+<div class="contato-wrap">
+    <div class="contato-box">
 
-    <div class="info">
-        <div>
-            <h3>Vendas</h3>
-            <p>Comercial SoilTech</p>
-
-            <h3>Suporte</h3>
-            <p>Ajuda técnica e sensores</p>
-
-            <h3>Parcerias</h3>
-            <p>Projetos agrícolas</p>
+        <div class="contato-header">
+            <h1>CONTATO</h1>
+            <p>contato@soiltech.com &nbsp;·&nbsp; (11) 99999-9999 &nbsp;·&nbsp; São Paulo, SP</p>
         </div>
 
-        <div>
-            <h3>Email</h3>
-            <p>contato@soiltech.com</p>
-
-            <h3>Telefone</h3>
-            <p>(11) 99999-9999</p>
-
-            <h3>Localização</h3>
-            <p>São Paulo - SP</p>
+        <div class="form-group">
+            <label>NOME</label>
+            <input type="text" placeholder="Seu nome completo" />
         </div>
+        <div class="form-group">
+            <label>EMAIL</label>
+            <input type="email" placeholder="seu@email.com" />
+        </div>
+        <div class="form-group">
+            <label>ASSUNTO</label>
+            <select>
+                <option>Vendas</option>
+                <option>Suporte Técnico</option>
+                <option>Parcerias</option>
+                <option>Outro</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>MENSAGEM</label>
+            <textarea rows="5" placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <button class="btn-enviar">ENVIAR</button>
+
     </div>
 </div>
 
-<script>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <h3 style="color:white; margin-bottom:10px;">SoilTech</h3>
+            <p>Monitoramento inteligente do solo</p>
+        </div>
+        <div class="footer-contact">
+            <h4 style="color:white; margin-bottom:10px;">Endereço</h4>
+            <p>São Paulo - SP</p>
+            <p>Brasil</p>
+        </div>
+        <div class="footer-contact">
+            <h4 style="color:white; margin-bottom:10px;">Contato</h4>
+            <p>Email: contato@soiltech.com</p>
+            <p>Telefone: (11) 99999-9999</p>
+        </div>
+        <div class="footer-links">
+            <h4 style="color:white; margin-bottom:10px;">Links Úteis</h4>
+            <a href="/sobre">Sobre Nós</a>
+            <a href="/tecnologia">Tecnologia</a>
+            <a href="/#dashboard">Dashboard</a>
+            <a href="/contato">Contato</a>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:30px; color:#9ca3af;">
+        © 2026 SoilTech - Todos os direitos reservados
+    </div>
+</footer>
 
+<script>
 window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
     if (window.scrollY > 50) {
@@ -49,50 +82,103 @@ window.addEventListener("scroll", () => {
         nav.classList.remove("scrolled");
     }
 });
-
 </script>
 
 <%- contentFor("espaco-head") %>
 
-
-
 <style>
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    background: url('/public/images/bg-paginas.jpg') center center / cover no-repeat fixed;
-    background-color: #000;
+    background: #1C2B1C;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
 }
 
-/* CONTEUDO */
-.container {
-    max-width: 900px;
-    margin: 60px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.contato-wrap {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 80px 20px;
 }
 
-h1 {
-    color: #16a34a;
+.contato-box {
+    background: #f7f5f2;
+    border-radius: 4px;
+    padding: 60px 50px;
 }
 
-.info {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+.contato-header {
+    margin-bottom: 50px;
 }
 
-.info div {
-    flex: 1;
+.contato-header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #111;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
 }
 
-h3 {
-    margin-top: 20px;
+.contato-header p {
+    font-size: 12px;
+    color: black;
+    letter-spacing: 1px;
 }
 
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
+.form-group {
+    margin-bottom: 24px;
 }
+
+.form-group label {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    color: black;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #111;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-bottom-color: #111;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.btn-enviar {
+    margin-top: 16px;
+    background: #1C2B1C;
+    color: white;
+    padding: 14px 48px;
+    border: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-enviar:hover {
+    background: #4a7c59;
+}
+
 </style>
