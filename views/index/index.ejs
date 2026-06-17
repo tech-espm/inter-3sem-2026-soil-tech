@@ -1,4 +1,4 @@
-<!-- NAV -->
+﻿<!-- NAV -->
 <nav>
     <div><strong><a href="/">SoilTech</a></strong></div>
     <div>
@@ -269,6 +269,7 @@ async function gerarHeatmap() {
             const cell = document.createElement("div");
             cell.className = "heat-cell";
             cell.style.background = cor;
+            cell.title = umidade > 0 ? umidade.toFixed(1) + "% de umidade" : "Sem dados";
             grid.appendChild(cell);
         });
     });
